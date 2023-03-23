@@ -1,0 +1,229 @@
+@import url("https://fonts.cdnfonts.com/css/gilroy-bold");
+
+/* Colors */
+:root {
+  --bg-color: #e6eef0;
+  --text-color: #435a5f;
+  --icon-color: #0ac2ef;
+  --border-color: #fff;
+  --container-color: #f1f3f6;
+}
+
+/* Typography */
+:root {
+  --core-text: "Gilroy-Light", sans-serif;
+  --emphasis: "Gilroy-Bold", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text-color);
+  font-family: var(--core-text);
+}
+
+body {
+  background: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 1000px;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
+
+.container .leftSide {
+  position: relative;
+  padding: 40px;
+  background: var(--container-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 30px 30px 80px rgba(55, 84, 170, 0.1),
+    -30px -30px 80px var(--border-color);
+  border-radius: 20px;
+}
+
+.text__profileInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.imagePlaceholder__me img {
+  height: 200px;
+  width: 210px;
+  margin: 20px;
+}
+
+.text__profileInfo h2 {
+  color: var(--text-color);
+  font-size: 1.5em;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-family: var(--emphasis);
+}
+
+.text__profileInfo h2 span {
+  font-size: 0.7em;
+  letter-spacing: 3px;
+}
+
+.text__profileInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contactInfo {
+  margin-bottom: 40px;
+}
+
+.contactInfo ul {
+  position: relative;
+}
+
+.contactInfo ul li {
+  position: relative;
+  list-style: none;
+  margin: 10px 0;
+}
+
+.contactInfo ul li :nth-child(odd) {
+  display: inline-block;
+  width: 30px;
+  font-size: 18px;
+  color: var(--icon-color);
+}
+
+h3 {
+  color: var(--text-color);
+  font-family: var(--emphasis);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 20px 0;
+}
+
+.contactInfo__edcation {
+  margin: 0 0 40px;
+}
+
+.contactInfo__edcation li {
+  margin: 15px 15px 15px 0;
+}
+
+.contactInfo__edcation h5 {
+  font-family: var(--emphasis);
+  color: var(--icon-color);
+}
+
+.contactInfo__edcation h4:nth-child(even) {
+  font-family: var(--emphasis);
+}
+
+/* Хочу сделать рефакторинг кода данного повторяющегося свойства через селекторы потомков, а не классы, но все ломается(  */
+
+.contactInfo__edcation ul li {
+  list-style: none;
+}
+
+.contactInfo__languages ul li {
+  list-style: none;
+}
+
+/* -- */
+
+.contactInfo__languages .percentage {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: var(--text-color);
+  display: block;
+  margin: 5px 0 10px;
+  border-radius: 3px;
+}
+
+.contactInfo__languages .percentage div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--icon-color);
+}
+
+/* Right Side */
+
+.rightSide {
+  position: relative;
+  margin: 30px 0 0 20px;
+}
+
+.summary__title,
+.experience__title,
+.skills__title,
+.hobbies__title {
+  font-family: var(--emphasis);
+  text-transform: uppercase;
+  font-size: 1em;
+  letter-spacing: 2px;
+  margin: 10px 0 5px 0;
+}
+
+.workingYear h5 {
+  font-family: var(--emphasis);
+}
+
+.position h4 {
+  margin: 5px 0;
+  font-size: 0.8em;
+}
+
+p {
+  font-size: 0.8em;
+  margin-bottom: 15px;
+}
+
+/* Stack, Skills */
+
+.skills {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skills li {
+  background: #f1f3f6;
+  color: var(--icon-color);
+  font-family: var(--emphasis);
+  padding: 5px 15px;
+  margin: 5px 0 5px 0px;
+  border-radius: 20px;
+  border: 1px solid #ffffff;
+  box-shadow: 30px 30px 80px rgba(55, 84, 170, 0.1);
+}
+
+/* Адаптивность */
+
+@media (max-width: 1000px) {
+  .container {
+    margin: 10px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .skills {
+    flex-direction: column;
+  }
+}
